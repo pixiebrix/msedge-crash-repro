@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "author": "PixieBrix, Inc.",
+  "name": "MS Edge Sidebar Crash Repro",
+  "short_name": "PixieBrix",
+  "description": "Reproduction for MS Edge crashes when user clicks a target=\"_blank\" link in the sidepanel",
+  "homepage_url": "https://github.com/microsoft/MicrosoftEdge-Extensions/issues/145#issuecomment-2068670044",
+  "minimum_chrome_version": "116.0",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' http: https:; object-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; frame-src 'self' http: https:"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "sidePanel"
+  ],
+  "action": {
+    "default_title": "MS Edge Sidebar"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
